@@ -99,7 +99,7 @@ class PetDetailScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width / 2,
                 child: TextButton.icon(
                   onPressed: () {
-                    Navigator.of(context).pushNamed(ChatScreen.route);
+                    Navigator.of(context).pushNamed(ChatScreen.route, arguments:{'ownerId':pet.ownerId});
                   },
                   icon: const Icon(
                     Icons.message_outlined,

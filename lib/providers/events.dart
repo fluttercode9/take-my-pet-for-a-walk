@@ -18,6 +18,7 @@ class Events with ChangeNotifier {
     notifyListeners();
     await DBhelper.addToFirestore(
       {
+        'ownerId': DBhelper.auth.currentUser!.uid,
         'title': event.title,
         'description': event.description,
         'location': GeoPoint(event.location.latitude, event.location.longitude),
@@ -28,6 +29,7 @@ class Events with ChangeNotifier {
   }
 
   Future<void> fetchEventsFromFirebase() async {
+    _events = [];
     final pets = await DBhelper.getData('pets');
     if (pets.isEmpty) {
       return;
@@ -35,6 +37,7 @@ class Events with ChangeNotifier {
     pets.forEach((e) {
       final loc = e['location'] as GeoPoint;
       _events.add(Event(
+        ownerId: e['ownerId'],
           id: e.id,
           title: e['title'],
           location:

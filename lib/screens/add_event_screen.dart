@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:okolicznie/helpers/db_helper.dart';
 import 'package:okolicznie/widgets/image_input.dart';
 import 'package:okolicznie/widgets/title_input.dart';
 import 'package:okolicznie/widgets/location_input.dart';
@@ -24,6 +25,7 @@ class AddEventScreen extends StatefulWidget {
 class _AddEventScreenState extends State<AddEventScreen> {
   File? _image;
   Event _editedEvent = Event(
+      ownerId: DBhelper.auth.currentUser!.uid,
       description: "",
       id: DateTime.now.toString(),
       imageUrl: "",

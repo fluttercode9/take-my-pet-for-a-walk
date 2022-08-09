@@ -1,14 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:okolicznie/helpers/db_helper.dart';
 
+import '../helpers/auth.dart';
 
 class AuthScreen extends StatefulWidget {
+  static final route = '/auth';
   AuthScreen({Key? key}) : super(key: key);
 
   @override
-  State<AuthScreen> createState() => _nameState();
+  State<AuthScreen> createState() => _AuthScreenState();
 }
 
-class _nameState extends State<AuthScreen> {
+class _AuthScreenState extends State<AuthScreen> {
+  bool loading = false;
   @override
   void _switchMode() {
     setState(() {
@@ -16,12 +22,26 @@ class _nameState extends State<AuthScreen> {
     });
   }
 
-  void _trySubmit() {
+  void _trySubmit() async {
     print('s');
+
     if (!_authFormKey.currentState!.validate()) {
       return;
     }
-    print('ss');
+    _authFormKey.currentState!.save();
+    setState(() {
+      print('setstate');
+      loading = true;
+    });
+    DBhelper.authenticateUser(
+        email: _email!,
+        password: _password!,
+        context: context,
+        loginMode: _loginMode,
+        name: _name);
+    setState(() {
+      loading = false;
+    });
   }
 
   String? _password;
@@ -44,7 +64,7 @@ class _nameState extends State<AuthScreen> {
                 key: _authFormKey,
                 child: Column(
                   children: [
-                    _loginMode
+                    !_loginMode
                         ? TextFormField(
                             onSaved: (newValue) => _name = newValue,
                             validator: (value) {
@@ -76,10 +96,14 @@ class _nameState extends State<AuthScreen> {
                       },
                       decoration: InputDecoration(label: Text('haslo')),
                     ),
-                    ElevatedButton(
-                      onPressed: _trySubmit,
-                      child: _loginMode ? Text('Zaloguj') : Text('Zarejestruj'),
-                    ),
+                    loading
+                        ? CircularProgressIndicator()
+                        : ElevatedButton(
+                            onPressed: _trySubmit,
+                            child: _loginMode
+                                ? Text('Zaloguj')
+                                : Text('Zarejestruj'),
+                          ),
                     _loginMode
                         ? TextButton(
                             onPressed: _switchMode,

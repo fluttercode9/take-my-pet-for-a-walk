@@ -20,21 +20,27 @@ class Event {
   final EventLocation location;
   final String imageUrl;
   final String description;
+  final String ownerId;
+  //final String ownerName trze to dorobic czeby nei feczowalo tak ciagle
 
   Event(
-      {required this.id,
+      {required this.ownerId,
+      required this.id,
       required this.title,
       required this.location,
       required this.imageUrl,
       required this.description});
 
   Event copyWith(
-      {String? id,
+      {
+      String? ownerId,
+      String? id,
       String? title,
       String? description,
       EventLocation? location,
       String? imageUrl}) {
     return Event(
+        ownerId: ownerId ?? this.ownerId,
         description: description ?? this.description,
         id: id ?? this.id,
         imageUrl: imageUrl ?? this.imageUrl,

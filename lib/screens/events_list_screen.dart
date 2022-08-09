@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:okolicznie/screens/add_event_screen.dart';
+import 'package:okolicznie/screens/auth_screen.dart';
 import 'package:okolicznie/screens/pet_detail_screen.dart';
 import 'package:provider/provider.dart';
 
+import '../helpers/db_helper.dart';
 import '../models/event.dart';
 import '../providers/events.dart';
 
@@ -42,6 +44,7 @@ class _EventsListScreenState extends State<EventsListScreen> {
                 Navigator.pushNamed(context, AddEventScreen.route);
               },
               icon: Icon(Icons.add)),
+          IconButton(onPressed: DBhelper.logout, icon: Icon(Icons.logout))
         ],
       ),
       body: Consumer<Events>(

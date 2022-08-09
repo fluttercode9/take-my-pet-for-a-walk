@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:okolicznie/helpers/db_helper.dart';
 import 'package:okolicznie/screens/auth_screen.dart';
 import 'package:okolicznie/screens/chat_screen.dart';
 import 'package:okolicznie/screens/map_screen.dart';
@@ -34,13 +35,25 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
             primarySwatch: Colors.indigo, primaryColor: Colors.indigo[700]),
-        initialRoute: '/',
+        // initialRoute: '/',
+        home: StreamBuilder(
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return EventsListScreen();
+            } else {
+              return AuthScreen();
+            }
+            ;
+          },
+          stream: DBhelper.auth.authStateChanges(),
+        ),
         routes: {
-          '/': (context) => EventsListScreen(),
           AddEventScreen.route: (ctx) => AddEventScreen(),
           MapScreen.route: (context) => MapScreen(),
           PetDetailScreen.route: (context) => PetDetailScreen(),
           ChatScreen.route: (ctx) => ChatScreen(),
+          EventsListScreen.route: (ctx) => EventsListScreen(),
+          AuthScreen.route: (ctx) => AuthScreen(),
         },
       ),
     );
