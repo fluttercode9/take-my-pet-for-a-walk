@@ -1,7 +1,7 @@
 # take-my-pet-for-a-walk
 
-#wersja 1 
-<img src="/screens/1.png" width = "200"/>
+# wersja 1 
+<img src="/screens/1.jpg" width = "200"/>
 
 
 
