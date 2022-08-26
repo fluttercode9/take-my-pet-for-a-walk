@@ -4,6 +4,8 @@ app enabling pet owners to temporarily take in pet or simply take them for a wal
 
 full source code available when i delete all api keys etc form repository :P :) right now only lib folder.
 
+video demo: https://youtu.be/Xpp0aZiybJs
+
 # wersja 1 
 <img src="/screens/1.jpg" width = "400"/> <img src="/screens/2.jpg" width = "400"/> <img src="/screens/3.jpg" width = "400"/>
 <img src="/screens/4.jpg" width = "400"/> <img src="/screens/5.jpg" width = "400"/> <img src="/screens/6.jpg" width = "400"/>
