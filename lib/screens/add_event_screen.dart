@@ -1,7 +1,8 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:okolicznie/helpers/db_helper.dart';
+import 'package:okolicznie/widgets/app_bar.dart';
 import 'package:okolicznie/widgets/image_input.dart';
 import 'package:okolicznie/widgets/title_input.dart';
 import 'package:okolicznie/widgets/location_input.dart';
@@ -25,7 +26,7 @@ class AddEventScreen extends StatefulWidget {
 class _AddEventScreenState extends State<AddEventScreen> {
   File? _image;
   Event _editedEvent = Event(
-      ownerId: DBhelper.auth.currentUser!.uid,
+      ownerId: FirebaseAuth.instance.currentUser!.uid,
       description: "",
       id: DateTime.now.toString(),
       imageUrl: "",
@@ -42,8 +43,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
         _editedEvent.description == null ||
         _editedEvent.location == null ||
         _image == null) {
-      print(
-          'nie udalo sie dodaj text do walidacji etc lokalizacji, stan steppera etc');
+     
       return;
     }
     await Provider.of<Events>(context, listen: false)
@@ -87,9 +87,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
       ),
     ];
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dodaj zwierzę'),
-      ),
+      appBar: CustomAppBar(title: "Dodawanie ogłoszenia"),
       body: Form(
         key: _formKey,
         child: Stepper(
@@ -163,7 +161,6 @@ class _AddEventScreenState extends State<AddEventScreen> {
       _formKey.currentState!.save();
       _saveEvent();
     } else {
-      print('nie udalo sie');
     }
   }
 
@@ -183,8 +180,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
         imageUrl: imageUrl,
         location: location,
         title: title);
-    print(
-        '${_editedEvent.title}xxx${_editedEvent.description}xxx${_editedEvent.location.latitude}${_editedEvent.location.address}');
+
   }
 
   void _changeState(StepState newState, FormSteps step) {

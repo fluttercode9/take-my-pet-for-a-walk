@@ -21,7 +21,7 @@ class ConfirmButton extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            primary: Colors.indigo[700],
+            primary: Color.fromARGB(255, 15, 63, 83),
             fixedSize: Size(width, height),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50),
