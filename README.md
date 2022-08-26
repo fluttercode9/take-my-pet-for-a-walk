@@ -1,7 +1,7 @@
 # take-my-pet-for-a-walk
 
 #wersja 1 
-![Screenshot](/screens/1.png)
+![Alt text](../screens/2.png)
 ![Screenshot](../screens/2.png)
 ![Screenshot](../screens/3.png)
 ![Screenshot](../screens/4.png)
