@@ -7,7 +7,9 @@ full source code available when i delete all api keys etc form repository :P :) 
 # wersja 1 
 <img src="/screens/1.jpg" width = "400"/> <img src="/screens/2.jpg" width = "400"/> <img src="/screens/3.jpg" width = "400"/>
 <img src="/screens/4.jpg" width = "400"/> <img src="/screens/5.jpg" width = "400"/> <img src="/screens/6.jpg" width = "400"/>
-<img src="/screens/7.jpg" width = "400"/> <img src="/screens/9.jpg" width = "400"/> <img src="/screens/10.jpg" width = "400"/>
+<img src="/screens/7.jpg" width = "400"/> <img src="/screens/9.jpg" width = "400"/> <img src="/screens/11.jpg" width = "400"/> <img src="/screens/7.jpg" width = "400"/> <img src="/screens/9.jpg" width = "400"/> <img src="/screens/12.jpg" width = "400"/> <img src="/screens/7.jpg" width = "400"/> <img src="/screens/9.jpg" width = "400"/> <img src="/screens/10.jpg" width = "400"/>
+
+
 
 
 
