@@ -1,17 +1,20 @@
 # take-my-pet-for-a-walk
 
-#wersja 1 
-![Screenshot](../screens/1.png)
-![Screenshot](../screens/2.png)
-![Screenshot](../screens/3.png)
-![Screenshot](../screens/4.png)
-![Screenshot](../screens/5.png)
-![Screenshot](../screens/6.png)
-![Screenshot](../screens/7.png)
+app enabling pet owners to temporarily take in pet or simply take them for a walk or just any annoncment. It is a local board -- uses device location and shows to user all pets in slider given radius. 
+
+full source code available when i delete all api keys etc form repository :P :) right now only lib folder.
+
+# wersja 1 
+<img src="/screens/1.jpg" width = "400"/> <img src="/screens/2.jpg" width = "400"/> <img src="/screens/3.jpg" width = "400"/>
+<img src="/screens/4.jpg" width = "400"/> <img src="/screens/5.jpg" width = "400"/> <img src="/screens/6.jpg" width = "400"/>
+<img src="/screens/7.jpg" width = "400"/> <img src="/screens/9.jpg" width = "400"/> <img src="/screens/10.jpg" width = "400"/>
 
 
 
-app enabling pet owners to temporarily take in pet or simply take them for a walk. 
+
+
+
+
 
 using Cloud Firestore, Firesotre, firebase Auth
 Google APIs - static maps, Places, geocoding, Maps API
