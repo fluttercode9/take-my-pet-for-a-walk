@@ -1,6 +1,7 @@
 # take-my-pet-for-a-walk
 
 #wersja 1 
+<img src="/screens/1.png" width = "300"/>
 
 ![Screenshot](screens/2.png)
 ![Screenshot](../screens/3.png)
