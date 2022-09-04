@@ -2,7 +2,7 @@
 
 app enabling pet owners to temporarily take in pet or simply take them for a walk or just any annoncment. It is a local board -- uses device location and shows to user all pets in slider given radius. 
 
-full source code available when i delete all api keys etc form repository :P :) right now only lib folder.
+full source code available when i delete all api keys etc form repository. right now only lib folder.
 
 video demo: https://youtu.be/Xpp0aZiybJs
 
